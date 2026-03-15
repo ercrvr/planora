@@ -89,12 +89,6 @@
       background: rgba(248, 250, 252, 0.82);
       box-shadow: 0 1px 0 rgba(15, 23, 42, 0.04), 0 8px 32px rgba(15, 23, 42, 0.06);
     }
-    html[data-theme="light"] .topbar-title {
-      background: linear-gradient(135deg, #0f172a, #334155);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    html[data-theme="light"] .card-title h2 { color: #0f172a; }
     html[data-theme="light"] .times-view {
       background: rgba(255,255,255,0.5);
       border-color: rgba(15, 23, 42, 0.05);
@@ -117,9 +111,6 @@
     }
     html[data-theme="light"] .icon-btn,
     html[data-theme="light"] .action-btn,
-    html[data-theme="light"] .micro-chip {
-      background: rgba(255,255,255,0.64);
-    }
     html[data-theme="light"] .icon-btn.primary {
       border-color: rgba(56, 189, 248, 0.48);
       box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3), 0 2px 8px rgba(56, 189, 248, 0.1);
@@ -302,30 +293,6 @@
     /* Layout Grids */
     .app { width: min(1000px, 100%); margin: 0 auto; }
     .page[hidden] { display: none !important; }
-    .page-placeholder {
-      margin-top: 12px;
-      min-height: calc(100vh - 320px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 32px 20px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      font-weight: 700;
-      box-shadow: var(--shadow-sm);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      animation: fadeIn 600ms ease-out;
-    }
-    .page-placeholder span {
-      opacity: 0.85;
-      letter-spacing: 0.02em;
-    }
-
 
     .schedule-page {
       display: flex;
@@ -623,32 +590,6 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
-    .schedule-date-group {
-      position: sticky;
-      top: 0;
-      z-index: 7;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 3px;
-      text-align: center;
-      background: var(--surface-solid);
-      border-bottom: 1px solid var(--border-strong);
-      padding: 6px 4px;
-    }
-    .schedule-date-group .day {
-      color: var(--text-subtle);
-      font-size: 0.72rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .schedule-date-group .date {
-      font-size: 0.92rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
     .schedule-company-head {
       position: sticky;
       top: 0;
@@ -803,17 +744,7 @@
       background: rgba(0,0,0,0.08) !important;
     }
     .schedule-cell.today-left,
-    .schedule-date-group.today-left {
-      position: relative;
-      z-index: 3;
-      border-left: var(--schedule-today-thickness) solid var(--schedule-today-color) !important;
-    }
     .schedule-cell.today-right,
-    .schedule-date-group.today-right {
-      position: relative;
-      z-index: 3;
-      border-right: var(--schedule-today-thickness) solid var(--schedule-today-color) !important;
-    }
     .schedule-now-line {
       position: absolute;
       left: var(--schedule-time-col-width);
@@ -1028,11 +959,6 @@
       text-align: center;
       min-height: 36px;
     }
-    .card-head-view .card-title {
-      text-align: center;
-      width: 100%;
-      flex: 0 1 auto;
-    }
     .card-head-view .card-live-block {
       padding: 0 56px;
     }
@@ -1058,24 +984,6 @@
     .card-toolbar .icon-row {
       pointer-events: auto;
     }
-    .card-title { min-width: 0; flex: 1; }
-    .card-title h2 {
-      margin: 0;
-      font-size: 1.35rem;
-      line-height: 1.2;
-      letter-spacing: -0.025em;
-      font-weight: 700;
-      color: #fff;
-      word-break: break-word;
-    }
-    .card-sub {
-      margin-top: 6px;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      line-height: 1.4;
-      font-weight: 500;
-    }
-
     /* Icons & Buttons */
     .icon-row { display: flex; gap: 8px; flex-shrink: 0; }
     .card-head .icon-row { margin-left: auto; }
@@ -1161,17 +1069,6 @@
       letter-spacing: 0.12em;
       font-weight: 700;
     }
-    .time-value {
-      font-size: 1.85rem;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      font-variant-numeric: tabular-nums;
-      background: linear-gradient(180deg, var(--text), var(--text-muted));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .time-date { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
     .arrow-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border-strong), transparent);
@@ -1192,27 +1089,6 @@
     }
 
     /* Meta Info */
-    .meta-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .micro-chip {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      font-weight: 600;
-      transition: all var(--transition);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
-    }
-    .micro-chip.highlight {
-      color: var(--accent);
-      border-color: rgba(56, 189, 248, 0.25);
-      background: rgba(56, 189, 248, 0.06);
-      box-shadow: 0 0 8px rgba(56, 189, 248, 0.08);
-    }
     .note {
       color: var(--text-subtle);
       font-size: 0.85rem;
@@ -1269,7 +1145,7 @@
       border-color: rgba(148, 163, 184, 0.18);
     }
     .picker-line { font-weight: 600; }
-    .picker-meta, .helper { color: var(--text-subtle); font-size: 0.8rem; }
+    .helper { color: var(--text-subtle); font-size: 0.8rem; }
     .helper { margin-top: 4px; }
 
     .segmented {
@@ -1416,19 +1292,7 @@
       line-height: 1.25;
       font-weight: 500;
     }
-    .card-current-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-    }
-    .card-current-row .micro-chip strong {
-      font-variant-numeric: tabular-nums;
-      color: inherit;
-    }
-
     /* Editor Actions */
-    .editor-actions { display: none; }
     .ghost-btn {
       flex: 1;
       height: 44px;
@@ -1765,16 +1629,6 @@
       padding-top: 82px;
       gap: 14px;
     }
-    .card.card-edit .card-title {
-      text-align: center;
-    }
-    .card.card-edit .card-title h2 {
-      font-size: 1.2rem;
-    }
-    .card.card-edit .card-sub {
-      margin-top: 4px;
-      font-size: 0.84rem;
-    }
     .card.card-edit .field-group {
       gap: 12px;
     }
@@ -1789,11 +1643,6 @@
       margin-top: 2px;
       line-height: 1.35;
     }
-    .card.card-edit .meta-row {
-      justify-content: center;
-      margin-top: 0;
-    }
-
     /* Mobile Responsive Overrides: The Swipe Carousel */
     @media (max-width: 768px) {
       .topbar {
@@ -1885,9 +1734,6 @@
       .card.card-edit .picker-btn {
         height: 44px;
       }
-      .card.card-edit .time-value {
-        font-size: 1.35rem;
-      }
       .card.card-edit .range-value {
         font-size: 1.18rem;
       }
@@ -1914,10 +1760,7 @@
       .card-toolbar {
         align-items: flex-start;
       }
-      .card-title { text-align: center; }
-      .card-head .card-title { text-align: center; }
       .icon-row { justify-content: flex-start; }
-      .meta-row { justify-content: center; }
       .times-view { align-items: center; }
       .time-panel { justify-content: center; width: 100%; }
       .time-info { align-items: center; text-align: center; }
@@ -1926,7 +1769,7 @@
         border-left: none;
         border-top: 3px solid var(--accent);
       }
-      .field-group, .field, .editor-actions { width: 100%; }
+    .field-group, .field { width: 100%; }
       .field { text-align: left; }
       .field label, .helper, .picker-btn, .input { text-align: left; }
       .picker-btn { align-items: flex-start; }
@@ -2327,15 +2170,6 @@
       box-shadow: var(--shadow-lg);
     }
     .event-card.is-completed { opacity:0.78; border-color:rgba(148,163,184,0.3); }
-    .event-card.is-warning {
-      border-color:rgba(245,158,11,0.48);
-      box-shadow:0 0 0 1px rgba(245,158,11,0.12), 0 0 16px rgba(245,158,11,0.06), var(--shadow-sm);
-    }
-    .event-card.is-danger {
-      border-color:rgba(239,68,68,0.52);
-      box-shadow:0 0 0 1px rgba(239,68,68,0.12), 0 0 16px rgba(239,68,68,0.06), var(--shadow-sm);
-      animation: borderGlow 3s ease-in-out infinite;
-    }
     .event-card-head { display:flex; gap:12px; align-items:flex-start; justify-content:space-between; }
     .event-title-wrap { min-width:0; display:flex; flex-direction:column; gap:4px; }
     .event-title-row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
@@ -2377,8 +2211,6 @@
       transition: background var(--transition);
     }
     html[data-theme="light"] .event-note-item { background:rgba(255,255,255,0.72); }
-    .event-comment-composer { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; align-items:start; }
-    .event-comment-composer textarea { min-height:44px; resize:vertical; }
     .event-empty {
       margin-top:8px;
       padding:22px;
@@ -2398,7 +2230,6 @@
       pointer-events: none;
     }
     html[data-theme="light"] .event-empty { background:rgba(255,255,255,0.62); }
-    .event-mini-actions { display:flex; gap:10px; flex-wrap:wrap; }
     .event-compact-btn {
       appearance:none;
       border:1px solid var(--border);
@@ -2462,9 +2293,6 @@
     .event-conflict-item { font-size:0.88rem; color:var(--text-muted); }
     .event-sheet-grid { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
     .event-sheet-grid .field.full { grid-column:1 / -1; }
-    .event-subtask-list { display:flex; flex-direction:column; gap:8px; }
-    .event-subtask-row { display:grid; grid-template-columns: 1fr auto; gap:8px; align-items:center; }
-    .event-note-row { display:flex; flex-direction:column; gap:8px; }
     .event-context-pills { display:flex; gap:8px; flex-wrap:wrap; }
     .event-context-pill {
       padding:6px 10px;
@@ -2512,13 +2340,6 @@
       overflow: visible;
     }
     .event-marker-preview.marker-icon svg,
-    .schedule-marker.marker-icon svg {
-      fill: currentColor;
-      stroke: currentColor;
-      stroke-width: 1.6;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
     .event-marker-preview.marker-shape svg,
     .schedule-marker.marker-shape svg {
       fill: currentColor;
@@ -2534,15 +2355,12 @@
       border: 1.5px solid transparent;
       background: transparent;
     }
-    .marker-shell.is-warning { border-color: rgba(245,158,11,0.9); background: rgba(245,158,11,0.12); }
-    .marker-shell.is-danger { border-color: rgba(239,68,68,0.95); background: rgba(239,68,68,0.12); }
     .schedule-marker.more { width:auto; min-width:20px; padding:0 4px; border-radius:999px; font-size:0.68rem; font-weight:800; background:rgba(255,255,255,0.08); border:1px solid var(--border); }
     html[data-theme="light"] .schedule-marker.more { background:rgba(255,255,255,0.78); }
     @media (max-width: 720px) {
       .event-card-body,
       .event-sheet-grid,
       .event-type-grid,
-      .event-type-inline-grid { grid-template-columns:1fr; }
       .event-comment-composer,
       .event-comment-row { grid-template-columns:1fr; }
       .event-type-row { grid-template-columns:auto minmax(0,1fr); }
@@ -2613,9 +2431,7 @@
     .page-events-focus .topbar { margin-bottom:12px; }
     @media (max-width: 760px) {
       .events-toolbar { align-items:flex-start; }
-      .event-card-body, .event-sheet-grid, .event-type-grid { grid-template-columns:1fr; }
-      .event-type-inline-grid { grid-template-columns:minmax(0,1fr) repeat(2,minmax(0,0.8fr)); }
-      .event-type-inline-grid .icon-btn { justify-self:end; }
+    .event-card-body, .event-sheet-grid { grid-template-columns:1fr; }
       .schedule-marker { width:11px; height:11px; }
       .schedule-marker.has-number::after { font-size:0.38rem; }
     }
@@ -2943,16 +2759,6 @@
   box-shadow: var(--shadow-lg);
   animation: alertPopIn 420ms cubic-bezier(0.32,0.72,0,1);
 }
-.alert-popup-emoji { font-size: 48px; margin-bottom: 14px; animation: alertBellSwing 0.7s ease; }
-.alert-popup-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-.alert-popup-message {
-  font-size: 14px; color: var(--text-muted); line-height: 1.5; margin-bottom: 6px;
-}
-.alert-popup-meta {
-  font-size: 12px; color: var(--text-subtle); margin-bottom: 20px;
-  padding: 10px; background: var(--surface); border-radius: var(--radius-sm);
-  line-height: 1.5;
-}
 .alert-popup-actions { display: flex; gap: 10px; justify-content: center; }
 .alert-popup-btn {
   padding: 10px 20px;
@@ -2990,7 +2796,6 @@
 .alert-popup-actions-bar { display: flex; gap: 10px; justify-content: center; }
 
 /* ── Alert Settings Sheet ── */
-.alert-settings-body { padding: 0 4px; }
 .alert-s-section {
   padding: 16px 0;
   border-bottom: 1px solid var(--border);
@@ -3057,7 +2862,6 @@
   flex: 1; font-size: 13px; color: var(--text);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.alert-lt-row .lt-sublabel { font-size: 11px; color: var(--text-muted); }
 .alert-lt-input {
   width: 64px; height: 34px; padding: 0 6px;
   border-radius: var(--radius-sm);
@@ -3084,23 +2888,6 @@
 }
 
 /* Company Alert Card */
-.alert-company-card {
-  padding: 12px; border-radius: var(--radius-sm);
-  border: 1px solid var(--border); background: var(--surface);
-  margin-bottom: 8px;
-}
-.alert-company-header {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-bottom: 10px;
-}
-.alert-company-name {
-  font-size: 13px; font-weight: 700; color: var(--text);
-  display: flex; align-items: center; gap: 6px;
-}
-.alert-company-name .co-dot {
-  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-}
-.alert-company-fields { display: flex; flex-direction: column; gap: 6px; }
 /* Card Alert Settings (in Company Edit/New) */
 .card-alert-section {
   margin-top: 12px;
@@ -3164,42 +2951,8 @@
 }
 
 /* Template Editor Inline */
-.alert-tpl-editor { display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
 .alert-tpl-editor input,
-.alert-tpl-editor textarea {
-  width: 100%; padding: 8px 12px;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-strong);
-  background: var(--surface); color: var(--text);
-  font-size: 13px; font-family: inherit;
-}
-.alert-tpl-editor textarea { min-height: 72px; resize: vertical; }
 .alert-tpl-editor input:focus,
-.alert-tpl-editor textarea:focus {
-  outline: none; border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(56,189,248,0.15);
-}
-.alert-tpl-editor-vars { display: flex; flex-wrap: wrap; gap: 5px; }
-.alert-tpl-editor-var {
-  padding: 3px 10px; border-radius: var(--radius-pill);
-  background: var(--surface); border: 1px solid var(--border);
-  color: var(--text-muted); font-size: 11px; cursor: pointer;
-  transition: all var(--transition); font-family: inherit;
-}
-.alert-tpl-editor-var:hover {
-  background: rgba(56,189,248,0.08); color: var(--accent); border-color: var(--accent);
-}
-.alert-tpl-editor-actions { display: flex; gap: 8px; justify-content: flex-end; }
-.alert-tpl-editor-actions button {
-  padding: 6px 16px; border-radius: var(--radius-pill);
-  border: 1px solid var(--border); background: var(--surface);
-  color: var(--text); font-size: 12px; font-weight: 600;
-  cursor: pointer; font-family: inherit; transition: all var(--transition);
-}
-.alert-tpl-editor-actions button.save {
-  background: var(--accent); color: #080d1a; border-color: transparent;
-}
-
 /* Sound/TTS Settings */
 .alert-sound-row {
   display: flex; align-items: center; gap: 12px; padding: 6px 0;
@@ -3600,11 +3353,6 @@
     .wallet-page { padding: 16px; max-width: 600px; margin: 0 auto; }
     .wallet-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
     .wallet-title { font-size: 1.4rem; font-weight: 800; margin: 0; }
-    .wallet-gear-btn {
-      background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px;
-      padding: 8px; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; justify-content: center;
-    }
-    .wallet-gear-btn:active { transform: scale(0.92); }
     .wallet-empty { text-align: center; padding: 60px 20px; color: var(--text-muted); }
     .wallet-empty-icon { font-size: 3rem; margin-bottom: 16px; }
     .wallet-empty h3 { margin: 0 0 8px; color: var(--text-primary); font-size: 1.1rem; }
@@ -7132,12 +6880,6 @@
         openSheet('event-settings');
       }
 
-      function openCalendarSettingsSheet() {
-        ui.calendarDraft = cloneCalendarSettings(state.calendarSettings);
-        renderCalendarSettingsSheet();
-        openSheet('calendar-settings');
-      }
-
       function renderCalendarSettingsSheet() {
         const settings = cloneCalendarSettings(ui.calendarDraft || state.calendarSettings);
         if (dom.calendarInterval) dom.calendarInterval.value = String(settings.slotInterval);
@@ -7508,17 +7250,6 @@
         `;
       }
 
-      function addCard() {
-        closeSheets();
-        const card = createBlankCard();
-        state.cards.push(card); // Now adds to the end for better carousel UX
-        ui.unsavedIds.add(card.id);
-        ui.drafts[card.id] = { ...card };
-        ui.editing.add(card.id);
-        renderCards();
-        requestAnimationFrame(() => revealCard(card.id));
-      }
-
       function beginEdit(id) {
         const card = findCard(id);
         if (!card) return;
@@ -7696,10 +7427,6 @@
         if (ui.currentPage !== 'calendar' || ui.sheet || !dom.scheduleGridScroll) return;
         setNavHidden(true);
         ui.scheduleLastScrollTop = dom.scheduleGridScroll.scrollTop;
-      }
-
-      function snapScheduleGridToNearestDay() {
-        return;
       }
 
       function handleNavPeekTouchStart(event) {
@@ -8050,7 +7777,7 @@
         const event = item.event;
         const type = findEventType(event.typeId);
         const ownerColor = resolveEventOwnerColor(event, type);
-        const markerColor = resolveEventMarkerColor(event, type);
+        const markerColor = resolveEventOwnerColor(event, type);
         const ownerLabel = resolveCompanyLabel(event.ownerCompanyId) || 'Personal';
         const laneLabel = resolveCompanyLabel(event.laneCompanyId) || 'Unassigned lane';
         const statusLabel = humanizeEventStatus(event.status);
@@ -8498,7 +8225,7 @@
           if (!(slot.start < occurrence.endMinute && slot.end > occurrence.startMinute)) continue;
           const isThisLane = (event.laneCompanyId || '') === (card.id || '');
           const type = findEventType(event.typeId);
-          const markerColor = resolveEventMarkerColor(event, type);
+          const markerColor = resolveEventOwnerColor(event, type);
           const item = { event, occurrence, type, color: markerColor, conflictSeverity: '', dayKey, sortStart: occurrence.sortStart, sortEnd: occurrence.sortEnd, startMinute: occurrence.startMinute, endMinute: occurrence.endMinute };
           allSlotEvents.push(item);
           if (isThisLane) out.push(item);
@@ -8563,14 +8290,6 @@
         return effectiveColorHex(eventType?.colorHex || '#38bdf8');
       }
 
-      function resolveEventMarkerColor(event, type = null) {
-        if (event?.status === 'completed') return '#94a3b8';
-        const ownerColor = resolveCompanyColor(event?.ownerCompanyId || '');
-        if (ownerColor) return ownerColor;
-        const eventType = type || findEventType(event?.typeId || '');
-        return effectiveColorHex(eventType?.colorHex || '#38bdf8');
-      }
-
       function findEventType(typeId) {
         return (state.eventSettings?.types || []).find(item => item.id === typeId) || defaultEventTypes()[0];
       }
@@ -8586,12 +8305,6 @@
 
       function renderMarkerKindOptions(selected = 'icon') {
         return [['icon', 'Icon'], ['shape', 'Shape']].map(([value, label]) => `<option value="${escapeHtml(value)}" ${selected === value ? 'selected' : ''}>${escapeHtml(label)}</option>`).join('');
-      }
-
-      function populateEventTypeCreateOptions() {
-        if (dom.eventTypeMarkerKind) dom.eventTypeMarkerKind.innerHTML = renderMarkerKindOptions(dom.eventTypeMarkerKind.value || 'icon');
-        if (dom.eventTypeShape) dom.eventTypeShape.innerHTML = renderShapeOptions(dom.eventTypeShape.value || 'square');
-        if (dom.eventTypeIcon) dom.eventTypeIcon.innerHTML = renderIconOptions(dom.eventTypeIcon.value || 'briefcase');
       }
 
 
@@ -10769,8 +10482,6 @@
 // ═══════════════════════════════════════════════════════════
 // ALERT ENGINE — Sound, Vibration, TTS, Templates, Scheduler
 // ═══════════════════════════════════════════════════════════
-
-const ALERT_STORAGE_KEY = 'timezone_planner_alerts_v1';
 
 // ── Default state ──
 function defaultAlertState() {
