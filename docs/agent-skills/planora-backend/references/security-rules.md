@@ -189,15 +189,17 @@ Firestore Security Rules don't have built-in rate limiting. However, you can imp
 Track the last write timestamp in the document and require minimum intervals:
 
 ```
-// In state/main rule:
-allow write: if isOwner()
-             && (
-               // First write (no existing data) — always allowed
-               !exists(resource)
-               ||
-               // Subsequent writes — at least 1 second between writes
-               request.time > resource.data._lastModified.toMillis() + duration.value(1, 's')
-             );
+// In state/main rule (for create/update — safe because it only checks `resource`, not `request.resource`):
+allow create, update: if isOwner()
+                      && (
+                        // First write (no existing data) — always allowed
+                        !exists(resource)
+                        ||
+                        // Subsequent writes — at least 1 second between writes
+                        request.time > resource.data._lastModified.toMillis() + duration.value(1, 's')
+                      );
+// Deletes don't need rate limiting — they're rare and idempotent
+allow delete: if isOwner();
 ```
 
 **Note:** This is a soft defense. The client controls `_lastModified`, so a malicious client could bypass it. For true rate limiting, you'd need Cloud Functions (not available on Spark plan). This pattern catches accidental rapid writes from buggy clients.
